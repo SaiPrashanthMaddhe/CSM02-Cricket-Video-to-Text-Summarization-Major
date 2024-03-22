@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CrikyWiki</title>
+  <!--<link rel="stylesheet" type="text/css" href="styles.css">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">-->
+  <style>
+    
+/** {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}*/
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+/* Header */
+header {
+  background-color: #141414;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 80px;
+  width: 300px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  font-size: 22px;
+  margin-right: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #ff0000;
+}
+
+/* Hero */
+
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("{{ url_for('static', filename='images/hero-background15.jpg') }}");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-style: thin;
+  margin-bottom: 10px;
+  max-width: 600px;
+}
+
+.hero-content p {
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+
+.btn {
+  display: inline-block;
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e60000;
+}
+
+/* About */
+.about {
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 20px;
+  background-color: #141414; 
+}
+
+.about-content {
+  flex: 1;
+  max-width: 600px;
+  color: #ffffff;
+}
+
+.about h2 {
+  font-size: 60px;
+  font-style: times new roman;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 20px;
+  max-width: 100%; /* Adjust the maximum width of the image */
+}
+
+
+
+.about-image {
+  flex: 0.1;
+  flex-direction: row;
+  text-align: left; /* Align the content (image) to the left */
+}
+
+/* Menu */
+.menu {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #1c1c1c;
+}
+
+.menu h2 {
+  font-size: 56px;
+  font-style:unset;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.menu-item {
+  flex: 0 1 calc(33.33% - 40px);
+  margin: 0 20px;
+  text-align: left;
+}
+
+.menu-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.menu-item h3 {
+  font-size: 34px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.menu-item p {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #ffffff;
+}
+
+/* Upload Section */
+.upload-section {
+  padding: 80px 20px;
+  font-style: calibri;
+  text-align: center;
+  background-color: #2b2b2b;
+}
+
+.upload-section h3 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+
+
+/* Summary Section */
+.summary-section {
+  padding: 80px 20px;
+  /*text-align: center; */
+  
+  background-color: #141414;
+}
+
+.summary-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  background-color: #2b2b2b;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.summary-container h3 {
+  color: #fff;
+  font-size: 36px;
+  font-style: calibri;
+  margin-bottom: 20px;
+}
+
+.output-box {
+  background-color: #fff;
+  color: #000;
+  padding: 30px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #1a1a1a;
+}
+
+.testimonials h2 {
+  font-size: 56px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.testimonial {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  text-align: left;
+}
+
+.testimonial img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.testimonial p {
+  font-size: 24px;
+  font-style: italic;
+  max-width: 600px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.testimonial h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Gallery */
+.gallery {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #2c2c2c; 
+}
+
+.gallery h2 {
+  font-size: 56px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.image-item {
+  position: relative; /* Add position relative to enable absolute positioning */
+}
+.image-item p {
+  position: absolute; /* Position the text absolutely */
+  bottom: 0; /* Align text to the bottom of the image */
+  left: 0; /* Align text to the left of the image */
+  right: 0; /* Align text to the right of the image */
+  background-color: rgba(0, 0, 0, 0.7); /* Add a semi-transparent background */
+  color: #fff; /* Text color */
+  padding: 10px; /* Padding for the text */
+  margin: 0; /* Remove default margin */
+}
+/* Contact */
+.contact {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #141414;
+  color: #fff;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-size: 56px;
+  margin-bottom: 40px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.info-item {
+  margin: 0 20px;
+  text-align: center;
+}
+
+.info-item i {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  display: inline-block;
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e60000;
+}
+
+/* Footer */
+.footer {
+  background-color: #141414; 
+  padding: 40px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.footer-logo img {
+  max-width: 300px;
+  height: 80px;
+
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-social a {
+  color: #fff;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.footer-text {
+  font-size: 14px;
+}
+/* Upload Button */
+#uploadBtn {
+  display: none; /* Hide the default file input */
+}
+.summary-content-button{
+  text-align: center;
+}
+
+label[for="uploadBtn"] {
+  display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  background: #c0392b;
+  text-align: center;
+  padding: 15px 40px;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  user-select: none;
+  cursor: pointer;
+  box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 3px;
+}
+
+label[for="uploadBtn"] i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+label[for="uploadBtn"]:active {
+  transform: scale(0.9);
+}
+
+#submit-button {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #fff;
+    background: #c0392b;
+    text-align: center;
+    padding: 15px 40px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 3px;
+}
+
+/* Summary Button */
+#summary-btn {
+  display: inline-block;
+  text-align: center;
+  margin-left: auto;
+  text-transform: uppercase;
+  color: #fff;
+  background: #c0392b;
+  text-align: center;
+  padding: 15px 40px;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  user-select: none;
+  cursor: pointer;
+  box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+#summary-btn:hover {
+  background-color: #e74c3c;
+}
+
+#summary-btn:active {
+  transform: scale(0.9);
+}
+
+  </style>
+
+
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/iconlogo6.png') }}" alt="Berger Hut Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to CrikyWiki!</h1>
+      <p>- Your Ultimate Match Summarization Tool</p>
+      <a href="#services" class="btn">Get Started</a>
+    </div>
+  </section>
+
+  <section class="about dark-theme">
+    <div class="about-content">
+      <h2>About CrikyWiki</h2>
+      <p>Welcome to CrikyWiki, where we revolutionize your cricket experience like never before! With CrikyWiki, you can transform every cricket match into an immersive journey through our cutting-edge match summarization tool.</p>
+      <p>Our platform empowers you to upload cricket match videos and instantly receive comprehensive textual summaries of all the thrilling action. Gone are the days of sifting through hours of footage to relive the highlights. CrikyWiki condenses the excitement into concise, informative summaries that capture every pivotal moment of the game.</p>
+      <p>Whether you're a passionate cricket enthusiast, a casual viewer, or a sports analyst, CrikyWiki is your ultimate companion for staying updated on the latest matches and reliving the excitement of past games. Join us and discover a new way to experience the world's most beloved sport – cricket – with CrikyWiki.</p>
+      <br>
+      <a href="#services" class="btn">Check out our new features</a>
+      
+    </div>
+    <div class="about-image">
+      <img src="{{ url_for('static', filename='images/about-image.png') }}" alt="About Image">
+    </div>
+    
+  </section>
+
+  <section class="menu">
+    <h2>How CrikyWiki Works</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="{{ url_for('static', filename='images/upload.png') }}" alt="Burger 1">
+        <h3>Step-1</h3>
+        <p>Upload your cricket match video.</p>
+      </div>
+      <div class="menu-item">
+        <img src="{{ url_for('static', filename='images/getsummary.png') }}"  alt="Burger 2">
+        <h3>Step-2</h3>
+        <p>Click "Generate" to receive an instant summary.</p>
+      </div>
+      <div class="menu-item">
+        <img src="{{ url_for('static', filename='images/read.png') }}" alt="Burger 3">
+        <h3>Step-3</h3>
+        <p>A Dive into the key moments of the match effortlessly! </p>
+      </div>
+    </div>
+  </section>
+
+ 
+
+ 
+<section class="upload-section">
+    <h3>Upload Your Cricket Match Video</h3>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".mp4" id="uploadBtn" style="display:none;" required>
+    <label for="uploadBtn"><i class="fa-solid fa-upload"></i> Upload </label>
+    <button id="submit-button" type="submit" class="fa-solid fa-upload"> Submit </button> 
+  </form>
+</section>
+
+
+  <section class="summary-section">
+    
+    <div class="summary-container">
+      <div class="summary-content-button">
+      <h3>Get Summary</h3>
+      <button id="summary-btn" onclick="generatesummary()">Generate</button>
+    </div>
+      <div id="summary-text" class="output-box"></div>
+      <div id="error-message" style="color: #c0392b;"></div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial">
+      <img src="{{ url_for('static', filename='images/customer1.jpg') }}" alt="Customer 1">
+      <p>"CrikyWiki is simply amazing! It has revolutionized how I experience cricket matches. Highly recommended!"</p>
+      <h4>- John Doe, Cricket Enthusiast</h4>
+    </div>
+    <div class="testimonial">
+      <img src="{{ url_for('static', filename='images/customer2.jpg') }}" alt="Customer 2">
+      <p>"I never knew summarizing cricket matches could be this easy. Thanks, CrikyWiki!"</p>
+      <h4>- Jane Smith, Sports Journalist</h4>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <h2>New Features Coming Soon!</h2>
+    <div class="image-grid">
+      <div class="image-item">
+        <img src="{{ url_for('static', filename='images/real-time-analysis.jpeg') }}" alt="Image 1">
+        <p>Real-Time Match Analysis</p> <!-- Added text under the image -->
+      </div>
+      <div class="image-item">
+        <img src="{{ url_for('static', filename='images/personalised-summaries.jpeg') }}" alt="Image 2">
+        <p>Personalized Match Summaries</p> <!-- Added text under the image -->
+      </div>
+      <div class="image-item">
+        <img src="{{ url_for('static', filename='images/lang.jpg') }}"  alt="Image 3">
+        <p>Multilingual Summaries</p> <!-- Added text under the image -->
+      </div>
+      <div class="image-item">
+        <img src="{{ url_for('static', filename='images/sport.jpg') }}"  alt="Image 4">
+        <p>Various Sports Summaries</p> <!-- Added text under the image -->
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>123 Main Street, City, Country</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone-alt"></i>
+          <p>+1 234 567 890</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <p>info@bergerhut.com</p>
+        </div>
+      </div>
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="3" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="{{ url_for('static', filename='images/iconlogo6.png') }}" alt="Logo">
+      </div>
+      <br><br>
+      <nav class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">About</a> 
+        <a href="#">Services</a>
+        <a href="#">Testimonials</a>
+        <a href="#">New Features</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contact</a>
+      </nav>
+      <br>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <p class="footer-text">&copy; 2023 Berger Hut. All rights reserved.</p>
+  </footer>
+  <!--<script>
+    document.getElementById('summary-btn').addEventListener('click', function() {
+        // Here, you should make an AJAX call or use fetch API to get the text file content from the backend
+        // For demonstration purposes, let's assume the backend URL is '/backend/summary.txt'
+        fetch('summary.txt')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(content => {
+                document.getElementById('summary-text').innerText = content;
+            })
+            .catch(error => {
+                console.error('There was a problem fetching the summary:', error);
+                document.getElementById('summary-text').innerText = "Error fetching summary. Please try again later.";
+            });
+    });
+</script>
+-->
+<!--
+<script>
+  function generateSummary() {
+      // Reset error message
+      document.getElementById("error-message").innerHTML = "";
+
+      // Fetch the summary content from the server
+      fetch('/get_summary')
+          .then(response => response.text())
+          .then(resultContent => {
+              // Display the summary content
+              document.getElementById("summary-text").innerHTML = resultContent;
+          })
+          .catch(error => {
+              // Display error message
+              document.getElementById("error-message").innerHTML = "Error fetching summary content.";
+              console.error('Error:', error);
+          });
+  }
+</script>-->
+
+<!--
+  <script>
+  document.getElementById('summary-btn').addEventListener('click', function() {
+      // Reset error message
+      document.getElementById("error-message").innerHTML = "";
+
+      // Fetch the summary content from the server
+      fetch('/get_summary')
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('Network response was not ok');
+              }
+              return response.text();
+          })
+          .then(content => {
+              // Display the summary content
+              document.getElementById('summary-text').innerText = content;
+          })
+          .catch(error => {
+              // Display error message
+              console.error('There was a problem fetching the summary:', error);
+              document.getElementById('summary-text').innerText = "Error fetching summary. Please try again later.";
+          });
+  });
+</script>
+-->
+<script>
+  document.getElementById('summary-btn').addEventListener('click', function() {
+      // Reset error message
+      document.getElementById("error-message").innerHTML = "";
+
+      // Fetch the summary content from the server
+      fetch('/get_summary')
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error('Network response was not ok');
+              }
+              return response.text();
+          })
+          .then(content => {
+              // Display the summary content
+              document.getElementById('summary-text').innerHTML = content;
+          })
+          .catch(error => {
+              // Display error message
+              console.error('There was a problem fetching the summary:', error);
+              document.getElementById('summary-text').innerText = "Error fetching summary. Please try again later.";
+          });
+  });
+</script>
+
+
+</body>
+</html>
