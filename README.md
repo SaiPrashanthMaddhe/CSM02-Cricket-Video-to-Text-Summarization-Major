@@ -2,6 +2,8 @@
 # CrickiWiki 
 # Cricket Video-to-Text Summarization Using Neural Networks Major Project
 
+This project takes the cricket video as input and generates a concise and contextual summary for the cricket match video utilizing only visual information.
+
 # RESULTS:
 
 ![image](https://github.com/SaiPrashanthMaddhe/CSM02-Cricket-Video-to-Text-Summarization-Major/assets/101933141/59528ab2-a8aa-4ded-8fa0-59363049fdbc)
@@ -15,8 +17,9 @@
 ![image](https://github.com/SaiPrashanthMaddhe/CSM02-Cricket-Video-to-Text-Summarization-Major/assets/101933141/eed8da02-2ad3-49ab-bac2-11f974e1460a)
 
 # ABSTRACT
-This project introduces an inventive application of neural networks in cricket sports video-to-text summarization, focusing on the extraction and representation of key highlights and events. The proposed system aims to transform the traditional approach to summarizing cricket match videos by harnessing the power of neural network architectures, including VGG-16 Convolutional Neural Networks (CNNs), Optical Character Recognition (OCR) and Long Short-Term Memory Recurrent Neural Networks (RNNs). By converting visual cues into concise textual summaries, the system offers an efficient solution for summarization, enhancing accessibility for a diverse audience. This innovative approach not only caters to cricket enthusiasts but also presents an invaluable tool for coaches, analysts, and sports professionals. The system's ability to distill complex match details into easily digestible textual summaries offer a streamlined approach to glean insights, strategize, and review match performances effectively. The integration of neural networks adds a layer of sophistication to the summarization process, offering a
-unique perspective on information extraction from cricket sports videos. Ultimately, this project aims to contribute to a new era of accessible and streamlined content  consumption, free from the complexities of in-depth sports.
+
+This project introduces an inventive application of neural networks in cricket sports video-to-text summarization, focusing on the extraction and representation of key highlights and events. The proposed system aims to transform the traditional approach to summarizing cricket match videos by harnessing the power of neural network architectures, including VGG-16 Convolutional Neural Networks (CNNs), Optical Character Recognition (OCR) and Long Short-Term Memory Recurrent Neural Networks (RNNs). By converting visual cues into concise textual summaries, the system offers an efficient solution for summarization, enhancing accessibility for a diverse audience. This innovative approach not only caters to cricket enthusiasts but also presents an invaluable tool for coaches, analysts, and sports professionals. The system's ability to distill complex match details into easily digestible textual summaries offer a streamlined approach to glean insights, strategize, and review match performances effectively. The integration of neural networks adds a layer of sophistication to the summarization process, offering a unique perspective on information extraction from cricket sports videos. Ultimately, this project aims to contribute to a new era of accessible and streamlined content  consumption, free from the complexities of in-depth sports.
+
 
 # Submitted By
 - Name: **Team-02**
@@ -60,18 +63,53 @@ large neural network models.
 of large datasets and model training operations.
 4. **Storage:** Adequate storage space (at least 500GB HDD or SSD) for storing video datasets, image frames, trained models, and intermediate data files.
 
+# Libraries Used:
+```
+torch==1.10.0
+ultralytics==8.0.3
+opencv-python==4.5.5.64
+numpy==1.21.4
+pillow==8.4.0
+pandas==1.3.4
+paddlepaddle==2.2.2
+paddleocr==2.0.2
+matplotlib==3.5.0
+transformers==4.12.3
+nltk==3.6.3
+sentencepiece==0.1.96
+```
+
+# How to Run Locally
+To run this project on your local machine, follow these steps:
+
+Clone the project repository:
+```
+git clone [(https://github.com/CSM02-Cricket-Video-to-Text-Summarization-Major.git)]
+```
+Go to the project directory
+```
+cd /CSM02-Cricket-Video-to-Text-Summarization-Major
+```
+Install Requirements
+```
+  pip3 install -r requirements.txt
+```
 
 # **System Requirements:**
 
 ```
+- Python (3.10 recommended)
+- OpenCV
+- YOLOV8
+- VGG16
+- LSTM
+- PaddleOCR
+- Distilbart
 - torch
 - ultralytics
-- opencv-python
 - numpy
 - pillow
 - pandas
-- paddlepaddle
-- paddleocr
 - matplotlib
 - transformers
 - nltk
