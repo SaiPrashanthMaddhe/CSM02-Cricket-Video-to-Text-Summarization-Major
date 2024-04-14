@@ -92,7 +92,7 @@ cd /CSM02-Cricket-Video-to-Text-Summarization-Major
 ```
 Install Requirements
 ```
-  pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 # **System Requirements:**
