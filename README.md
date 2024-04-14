@@ -1,7 +1,7 @@
 **CSM02-Cricket-Video-to-Text-Summarization-Using-Neural-Networks-MajorProject**
 
 
-**Software Requirements:**
+**SOFTWARE REQUIREMENTS:**
 1. Operating System: Compatible with Windows 10, macOS Mojave (10.14) or later, or
 popular Linux distributions such as Ubuntu 18.04 LTS or newer versions.
 2. Python Environment: Python 3.x is installed with essential libraries such as
@@ -14,7 +14,6 @@ Paddle OCR, BART (Bidirectional and Auto-Regressive Transformers), and pretraine
 6. Internet Connectivity: High-speed internet connection for accessing online resources, downloading additional datasets, and cricket match footage.
 
 **HARDWARE REQUIREMENTS**
-Hardware requirements for application development are as follows:
 1. CPU: A modern multi-core processor (Intel Core i5 or equivalent) to handle
 computational tasks efficiently.
 2. GPU: A dedicated graphics processing unit (NVIDIA GeForce GTX 1060 or equivalent)
