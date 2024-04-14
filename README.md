@@ -1,5 +1,19 @@
 **CSM02-Cricket-Video-to-Text-Summarization-Using-Neural-Networks-MajorProject**
 
+**RESULTS:**
+
+![image](https://github.com/SaiPrashanthMaddhe/CSM02-Cricket-Video-to-Text-Summarization-Major/assets/101933141/59528ab2-a8aa-4ded-8fa0-59363049fdbc)
+
+![image](https://github.com/SaiPrashanthMaddhe/CSM02-Cricket-Video-to-Text-Summarization-Major/assets/101933141/7db0e289-180c-4db2-be4d-37856be06d56)
+
+![image](https://github.com/SaiPrashanthMaddhe/CSM02-Cricket-Video-to-Text-Summarization-Major/assets/101933141/dd62fe70-284c-4eae-a304-cc8e28841359)
+
+![image](https://github.com/SaiPrashanthMaddhe/CSM02-Cricket-Video-to-Text-Summarization-Major/assets/101933141/483b5bbb-fe0f-492c-a1c2-991820600b25)
+
+![image](https://github.com/SaiPrashanthMaddhe/CSM02-Cricket-Video-to-Text-Summarization-Major/assets/101933141/eed8da02-2ad3-49ab-bac2-11f974e1460a)
+
+Our project aims to generate textual summaries from the uploaded cricket video as input utilizing neural networks YOLO, CNN VGG16, LSTM, Paddle OCR, and Distilbart. Frames are extracted from the cricket video and then representative frames are generated. YOLOV8 is performed on representative frames to extract the scoreboard from the frames. CNN and LSTM are utilized to predict the action going in the frame. OCR is performed on the scoreboard extracted from the frame to extract the team, batsman, and bowler information. This data is stored in csv file.
+
 
 **SOFTWARE REQUIREMENTS:**
 1. Operating System: Compatible with Windows 10, macOS Mojave (10.14) or later, or
@@ -27,27 +41,18 @@ of large datasets and model training operations.
 **PIP commands for installing the libraries:**
 
 
-pip install torch
-
-pip install ultralytics
-
-pip install opencv-python
-
-pip install numpy
-
-pip install pillow
-
-pip install pandas
-
-pip install paddlepaddle paddleocr
-
-pip install matplotlib
-
-pip install transformers
-
-pip install nltk
-
-pip install sentencepiece
+torch
+ultralytics
+opencv-python
+numpy
+pillow
+pandas
+paddlepaddle
+paddleocr
+matplotlib
+transformers
+nltk
+sentencepiece
 
 
 **HOW TO IMPLEMENT THIS PROJECT:**
