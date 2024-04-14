@@ -25,17 +25,30 @@ of large datasets and model training operations.
 
 
 **PIP commands for installing the libraries:**
+
+
 pip install torch
+
 pip install ultralytics
+
 pip install opencv-python
+
 pip install numpy
+
 pip install pillow
+
 pip install pandas
+
 pip install paddlepaddle paddleocr
+
 pip install matplotlib
+
 pip install transformers
+
 pip install nltk
+
 pip install sentencepiece
+
 
 **HOW TO IMPLEMENT THIS PROJECT:**
 
