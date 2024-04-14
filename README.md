@@ -130,3 +130,6 @@ allmodules.py file consists of all the code to generate the summary of input cri
 
 For a detailed walkthrough of our project, watch the video [here](https://drive.google.com/file/d/1wy6d4aU2JNFbaFhrIbzdHOXMFP5mlxzI/view).
 
+# Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what would you like to change.
+
