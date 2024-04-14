@@ -1,7 +1,7 @@
 **CSM02-Cricket-Video-to-Text-Summarization-Using-Neural-Networks-MajorProject**
 
 
-**Software Requirements: **
+**Software Requirements:**
 1. Operating System: Compatible with Windows 10, macOS Mojave (10.14) or later, or
 popular Linux distributions such as Ubuntu 18.04 LTS or newer versions.
 2. Python Environment: Python 3.x is installed with essential libraries such as
@@ -10,7 +10,7 @@ TensorFlow, Keras, scikit-learn, NumPy, NLTK, and OpenCV for machine learning, n
 4. Version Control: Git installed for version control management, facilitating
 collaboration and tracking changes in code and project files.
 5. External Libraries and Models: Installation of additional libraries and models such as
-Paddle OCR, BART (Bidirectional and Auto-Regressive Transformers), and pretrained models like VGG16 for image processing and text summarization tasks.
+Paddle OCR, BART (Bidirectional and Auto-Regressive Transformers), and pretrained models like VGG16 for image processing and text summarization tasks.
 6. Internet Connectivity: High-speed internet connection for accessing online resources, downloading additional datasets, and cricket match footage.
 
 **HARDWARE REQUIREMENTS**
