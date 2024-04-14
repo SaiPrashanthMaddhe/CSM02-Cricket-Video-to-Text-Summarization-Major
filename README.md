@@ -37,7 +37,9 @@ pip install transformers
 pip install nltk
 pip install sentencepiece
 
-**How to implement the project:**
+**HOW TO IMPLEMENT THIS PROJECT:**
+
+
 allmodules.py file consists all the code to generate the summary of input cricket video 
 
 1)Run app.py (flask program)
